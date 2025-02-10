@@ -77,7 +77,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'CRUD_tasklist.wsgi.application'
+WSGI_APPLICATION = 'CRUD_tasklist'
 
 import dj_database_url
 
