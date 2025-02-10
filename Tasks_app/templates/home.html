@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content%}
+<div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="text-primary">Task List CRUD</h1>
+        <div>
+            {% if user.is_authenticated %}
+                <a href="{% url 'signout' %}" class="btn btn-danger">Log Out</a>
+            {% else %}
+                <a href="{% url 'signin' %}" class="btn btn-primary">Sign In</a>
+                <a href="{% url 'signup' %}" class="btn btn-outline-primary ms-2">Sign Up</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <p class="lead">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem soluta repellendus, est, quam eum fugit iste cupiditate ratione non quisquam nihil, aliquam quidem dolores vero minima voluptate!
+    </p>
+
+    <p>
+        Vero, officiis provident quaerat maxime veniam excepturi, delectus illo blanditiis, quos recusandae unde doloremque animi deleniti enim et culpa numquam quisquam deserunt sint sed?
+        Similique debitis veniam aut aliquid iusto porro ut. Nisi, perferendis ex. Distinctio necessitatibus, enim illum deleniti fuga vel, inventore animi molestias rerum in quis ratione,
+        architecto consectetur suscipit incidunt asperiores quam cumque molestiae alias qui sed soluta quos est ipsam!
+    </p>
+</div>
+{% endblock %}

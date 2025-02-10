@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg border-0 rounded-3">
+                <div class="card-header bg-primary text-white text-center">
+                    <h2 class="mb-0">Sign Up</h2>
+                </div>
+                <div class="card-body">
+                    {% if error %}
+                        <div class="alert alert-danger text-center">
+                            {{ error }}
+                        </div>
+                    {% endif %}
+
+                    <form method="POST" >
+                        {% csrf_token %}
+
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username:</label>
+                            <input type="text" class="form-control" name="username" id="username" placeholder="Write your username" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password1" class="form-label">Password:</label>
+                            <input type="password" class="form-control" id="password1" name="password1" placeholder="Write your password" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password2" class="form-label">Confirm Password:</label>
+                            <input type="password" class="form-control" id="password2" name="password2" placeholder="Confirm your password" required>
+                        </div>
+
+                        <div class="d-grid">
+                            <button class="btn btn-primary btn-lg">Sign Up</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="text-center mt-3">
+                <p>Already have an account? <a href="{% url 'signin' %}" class="text-primary">Sign in</a></p>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
